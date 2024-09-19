@@ -1,0 +1,12 @@
+<div class="weather-container">
+  <h1>Weather Forecast - Wroclaw</h1>
+
+  <div *ngIf="(weatherData$ | async) as data">
+    <img src="{{data.current.condition.icon}}" alt="{{data.current.condition.text}}">
+    <p>Temperature: {{ data.current.temp_c }} °C</p>
+    <p>Weather: {{ data.current.condition.text }}</p>
+    <p>Humidity: {{ data.current.humidity }}%</p>
+    <p>Wind Speed: {{ data.current.wind_kph }} k/h</p>
+    <p>Wind Direction: {{ data.current.wind_dir }}</p>
+  </div>
+</div>
