@@ -21,7 +21,7 @@ export class AppComponent implements OnDestroy, OnInit {
 
   ngOnInit(): void {
     if (typeof Worker !== 'undefined') {
-      this.worker = new Worker(new URL('./weather-worker.worker.js', import.meta.url), { type: 'module' });
+      this.worker = new Worker(new URL('./weather.worker.js', import.meta.url), { type: 'module' });
 
       this.worker.postMessage({ url: `${this.apiUrl}current.json?key=${this.apiKey}&q=Wroclaw&aqi=no` });
 
